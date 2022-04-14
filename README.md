@@ -1,4 +1,4 @@
-# IoT Smart Home with Google Tutorial
+# IoT Smart Home with Google Tutorial
 
 *WORK IN PROGRESS*
 
