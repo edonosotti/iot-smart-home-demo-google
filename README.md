@@ -17,4 +17,5 @@ Check the docs of each available component for details.
 
 Available components:
 
+ * [Terraform configuration](./terraform)
  * [Smart Plug Simulator](./smart-plug-simulator)
