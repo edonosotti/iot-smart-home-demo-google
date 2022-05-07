@@ -9,3 +9,10 @@ resource "google_pubsub_topic" "smart_plug_default_state" {
 resource "google_pubsub_topic" "smart_plug_default_telemetry" {
   name = "smart-plug-default-telemetry"
 }
+
+# Pub/Sub Topic to receive CONNECT and DISCONNECT events from a Log Sink
+# Docs: https://medium.com/rockedscience/tracking-device-connections-in-google-cloud-iot-core-3263ffc38459
+# Docs: https://cloud.google.com/logging/docs/export/configure_export_v2
+resource "google_pubsub_topic" "smart_plug_connections" {
+  name = "smart-plug-connections"
+}
