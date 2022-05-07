@@ -467,7 +467,9 @@ def mqtt_device_demo(args):
             )
 
         # Send telemetry every 5 seconds
-        time.sleep(5)
+        for i in range(0, 5):
+            time.sleep(1)
+            client.loop()
         send_telemetry(client)
     except KeyboardInterrupt:
         pass
