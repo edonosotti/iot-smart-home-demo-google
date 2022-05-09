@@ -271,11 +271,12 @@ def error_str(rc):
     """Convert a Paho error to a human readable string."""
     return "{}: {}".format(rc, mqtt.error_string(rc))
 
-def on_connect(unused_client, unused_userdata, unused_flags, rc):
+def on_connect(client, unused_userdata, unused_flags, rc):
     """Callback for when a device connects."""
     global SHOULD_BACKOFF
     global MIN_BACKOFF_TIME
     print(colored("on_connect", "blue"), mqtt.connack_string(rc))
+    send_state(client)
     # After a successful connect, reset backoff time and stop backing off.
     SHOULD_BACKOFF = False
     MIN_BACKOFF_TIME = 1
